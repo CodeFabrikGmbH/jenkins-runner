@@ -31,14 +31,18 @@ Node image for Jenkins CI server
 ### Example docker-compose file:
 ```yaml
 jenkins-slave:
+  # Jenkins user is hardwired into jenkins master container. Re-use it here 
+  user: "1000"
   restart: always
-  image: jenkins-slave:latest
+  image: codefabrik/jenkins-slave:latest
   container_name: jenkins-slave
-  external_links:
-    - jenkins
   environment:
-    - JNPL_URL=http://jenkins:8080/computer/node/slave-agent.jnlp
-    - SECRET=20467030404791871aec4d71207d6ade37456d3f82f4741712308cafbc6506de
+    # Use connection parameters given by jenkins master
+    - JNPL_URL=http://[jenkins master FQDN]/computer/slave-1/slave-agent.jnlp
+    - SECRET=ffc539f1a8252dc87ddbd96f23464d92c66565d4635c6402ce6e9bc1628ddd91
+    - WORKDIR=/home/jenkins
+    # Use additional parameters, e.g. no certificate check for self-signed certificates
+    - OPTIONS=-noCertificateCheck
   volumes:
-    - /docker/volumes/jenkins-slave/:/home/jenkins
+    - /docker/volumes/jenkins-slave/:/home/jenkins/
 ```
