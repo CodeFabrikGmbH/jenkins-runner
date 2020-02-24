@@ -63,8 +63,8 @@ RUN easy_install -U pip \
 RUN curl -L https://git.io/n-install | bash -s -- -y
 
 
-RUN addgroup --system -gid 10000 jenkins
-RUN adduser --uid 10000 --home $HOME --ingroup jenkins jenkins
+RUN addgroup --system -gid 1000 jenkins
+RUN adduser --uid 1000 --home $HOME --ingroup jenkins jenkins
 
 #add docker support for jenkins user
 RUN addgroup --system -gid 999 docker && usermod -aG docker jenkins
