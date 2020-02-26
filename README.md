@@ -4,6 +4,7 @@ Node image for Jenkins CI server
 
 * Ubuntu base image
 * OpenJDK 1.8.242
+* OpenJDK 13.0.2 (home: /opt/jvm/jdk13.0.2)
 * Jenkins remoting client: https://repo.jenkins-ci.org/public/org/jenkins-ci/main/remoting/3.17/remoting-3.17-sources.jar
 * Additional apps:
     * google-cloud-sdk
@@ -27,6 +28,9 @@ Node image for Jenkins CI server
     * mono-devel
     * kubectl
     * python3-pip 
+
+#### Requirements
+The host system has a user with uid 1000 (jenkins user) and a docker group with gid 999.
 
 ### Example docker-compose file:
 ```yaml
