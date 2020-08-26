@@ -75,9 +75,6 @@ RUN set -eux; \
 RUN addgroup --system -gid 1000 jenkins
 RUN adduser --uid 1000 --home $HOME --ingroup jenkins jenkins
 
-#add docker support for jenkins user
-RUN addgroup --system -gid 999 docker && usermod -aG docker jenkins
-
 RUN chown -R jenkins $HOME
 
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
