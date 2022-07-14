@@ -27,7 +27,7 @@ RUN curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add 
 
 RUN apt-get update \
     && apt-get install -y --allow-unauthenticated \
-    build-essential gcc python-dev python-setuptools google-cloud-sdk \
+    build-essential gcc python2 google-cloud-sdk \
     git \
     maven \
     rsync \
