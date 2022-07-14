@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:22.04
 
 ARG JENKINS_SLAVE_VERSION=3.17
 ENV HOME /home/jenkins
