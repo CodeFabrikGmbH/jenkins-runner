@@ -59,7 +59,7 @@ RUN pip install -U crcmod
 RUN npm install -g n
 
 # install box-cli
-npm install --global @box/cli
+RUN npm install --global @box/cli
 
 RUN set -eux; \
     ESUM='acc7a6aabced44e62ec3b83e3b5959df2b1aa6b3d610d58ee45f0c21a7821a71'; \
