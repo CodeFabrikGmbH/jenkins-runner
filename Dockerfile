@@ -58,6 +58,9 @@ RUN pip install -U crcmod
 # install node version manager "n"
 RUN npm install -g n
 
+# install box-cli
+npm install --global @box/cli
+
 RUN set -eux; \
     ESUM='acc7a6aabced44e62ec3b83e3b5959df2b1aa6b3d610d58ee45f0c21a7821a71'; \
     BINARY_URL='https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_linux-x64_bin.tar.gz'; \
