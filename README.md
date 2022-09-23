@@ -25,9 +25,12 @@ Node image for Jenkins CI server
     * rename
     * libglib2.0-0
     * google-chrome-stable
-    * mono-devel
-    * kubectl
-    * python3-pip 
+    * mono-complete
+    * python3-pip
+    * nodeja
+    * npm
+    * n
+    * box-cli 
 
 #### Requirements
 The host system has a user with uid 1000 (jenkins user) and a docker group with gid 999.
